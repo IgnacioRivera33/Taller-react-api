@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar.jsx';
 import ProductList from './components/ProductList.jsx';
 import FavoritesList from './components/FavoritesList.jsx';
+import BlockedList from './components/BlockedList.jsx';
+import { processProducts } from './utils/productProcessor.js';
 
 const API_URL = 'https://fakestoreapi.com/products';
 const FAVORITES_KEY = 'tienda-ropa-favorites';
@@ -39,7 +41,8 @@ function App() {
         const clothingProducts = data.filter((product) =>
           product.category === "men's clothing" || product.category === "women's clothing"
         );
-        setProducts(clothingProducts);
+        const processedProducts = processProducts(clothingProducts);
+        setProducts(processedProducts);
       })
       .catch((fetchError) => setError(fetchError.message))
       .finally(() => setLoading(false));
@@ -62,11 +65,16 @@ function App() {
   };
 
   const handleToggleBlocked = (productId) => {
-    setBlocked((current) =>
-      current.includes(productId)
-        ? current.filter((id) => id !== productId)
-        : [...current, productId]
-    );
+    setBlocked((current) => {
+      if (current.includes(productId)) {
+        return current.filter((id) => id !== productId);
+      } else {
+        setFavorites((favs) =>
+          favs.filter((id) => id !== productId)
+        );
+        return [...current, productId];
+      }
+    });
   };
 
   return (
@@ -91,11 +99,18 @@ function App() {
             />
           )}
         </main>
-        <FavoritesList
-          products={products}
-          favorites={favorites}
-          onRemoveFavorite={handleToggleFavorite}
-        />
+        <aside className="sidebars">
+          <FavoritesList
+            products={products}
+            favorites={favorites}
+            onRemoveFavorite={handleToggleFavorite}
+          />
+          <BlockedList
+            products={products}
+            blocked={blocked}
+            onRemoveBlocked={handleToggleBlocked}
+          />
+        </aside>
       </div>
     </div>
   );

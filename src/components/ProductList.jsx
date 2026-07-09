@@ -3,10 +3,15 @@ import ProductCard from './ProductCard.jsx';
 function ProductList({ products, query, favorites, blocked, onToggleFavorite, onToggleBlocked }) {
   const normalizedQuery = query.toLowerCase().trim();
   const filteredProducts = products.filter((product) => {
+    if (blocked.includes(product.id)) {
+      return false;
+    }
     const titleMatch = product.title.toLowerCase().includes(normalizedQuery);
     const categoryMatch = product.category.toLowerCase().includes(normalizedQuery);
-    const descriptionMatch = product.description.toLowerCase().includes(normalizedQuery);
-    return titleMatch || categoryMatch || descriptionMatch;
+    const descriptionMatch = product.translatedDescription.toLowerCase().includes(normalizedQuery);
+    const colorMatch = product.color.toLowerCase().includes(normalizedQuery);
+    const genderMatch = product.genderFilter.includes(normalizedQuery);
+    return titleMatch || categoryMatch || descriptionMatch || colorMatch || genderMatch;
   });
 
   if (filteredProducts.length === 0) {

@@ -130,3 +130,40 @@ Panel sticky que se mantiene visible al scrollear
 Muestra contador y mensaje cuando no hay favoritos
 
 LA RESPUESTA FUE UTIL PORQUE: Se logro el funcionamiento de las dos columnas y se creo el panel sticky de favoritos que se mantiene visible al scrollear.
+
+PROMPT 5
+Siguente commit: Se requieren los siguentes requerimientos funcionales:
+
+Debe bloquear elementos: un elemento bloqueado no aparece en los resultados de
+busqueda hasta que se elimine de la lista de bloqueados.
+• Si un elemento esta en favoritos y se bloquea, debe retirarse automaticamente de
+favoritos.
+
+RESPUESTA 5
+Cambios realizados
+Funcionalidad de bloqueo mejorada:
+
+Productos bloqueados NO aparecen en los resultados de búsqueda
+Al bloquear un producto que está en favoritos, se remueve automáticamente de favoritos
+Al desbloquear, el producto vuelve a aparecer en búsquedas
+Nuevo componente:
+
+BlockedList.jsx - Panel de productos bloqueados con opción de desbloquear
+Cambios en App.jsx:
+
+Importación de BlockedList
+Reorganización del layout: sidebars ahora contiene ambos paneles (favoritos + bloqueados)
+Lógica en handleToggleBlocked para remover automáticamente de favoritos
+Cambios en ProductList.jsx:
+
+Filtrado de productos bloqueados antes de aplicar búsqueda
+Los bloqueados nunca aparecen en resultados
+Estilos CSS:
+
+Nuevo contenedor .sidebars que apila favoritos y bloqueados verticalmente
+Estilos para .blocked-container, .blocked-item, .unblock-btn
+Media queries actualizadas para responsividad en tablets y móviles
+Recarga la app en http://localhost:5173. Ahora puedes bloquear productos y verán desaparecer de búsquedas mientras aparecen en el panel de bloqueados a la derecha.
+
+ESTA RESPUESTA FUE UTIL PORQUE: Los cambios se realizaron con exito y funcionan de manera correcta y esperada.
+ACTUALIZACION: Se hicieron cambios y arreglos en el sistema de busqueda y filtrado.
