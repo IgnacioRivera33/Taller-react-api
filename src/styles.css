@@ -212,3 +212,58 @@ header p {
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+.search-bar-container {
+  margin: 1.5rem 0 2rem;
+}
+
+.search-bar {
+  flex-wrap: wrap;
+}
+
+.search-bar label {
+  flex: 1 1 100%;
+  margin-bottom: 0.5rem;
+}
+
+.search-bar input {
+  flex: 1 1 100%;
+  min-width: 0;
+  padding: 0.95rem 1.2rem;
+  font-size: 1rem;
+}
+
+.search-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.results-count {
+  margin: 1rem 0 1.5rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.empty-state {
+  background: white;
+  border: 2px dashed #d1d5db;
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.empty-hint {
+  font-size: 0.95rem !important;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+}
+

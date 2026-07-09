@@ -3,8 +3,8 @@ import SearchBar from './components/SearchBar.jsx';
 import ProductList from './components/ProductList.jsx';
 
 const API_URL = 'https://fakestoreapi.com/products';
-const FAVORITES_KEY = 'supermercado-favorites';
-const BLOCKED_KEY = 'supermercado-blocked';
+const FAVORITES_KEY = 'tienda-ropa-favorites';
+const BLOCKED_KEY = 'tienda-ropa-blocked';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -34,7 +34,12 @@ function App() {
         }
         return response.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => {
+        const clothingProducts = data.filter((product) =>
+          product.category === "men's clothing" || product.category === "women's clothing"
+        );
+        setProducts(clothingProducts);
+      })
       .catch((fetchError) => setError(fetchError.message))
       .finally(() => setLoading(false));
   }, []);
@@ -66,8 +71,8 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <h1>Supermercado</h1>
-        <p>Explora productos con imágenes, busca por nombre o categoría, y administra favoritos y bloqueos.</p>
+        <h1>Tienda de Ropa</h1>
+        <p>Explora nuestra colección de ropa para hombre y mujer.</p>
       </header>
       <SearchBar query={query} onQueryChange={setQuery} />
       {loading && <p>Cargando productos...</p>}

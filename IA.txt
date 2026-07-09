@@ -72,3 +72,33 @@ Tambien se actualizaron style.css y se inutiliza ItemList.jsx
 QUE SE CAMBIO?: Se realizará una nueva prompt para reparar errores y tambien se eliminara el archivo ItemList
 ACTUALIZACION: Se instalo node.js que no se habia instalado previamente, se repararan errores.
 ACTUALIZACION 2: VITE FUNCIONA
+
+PROMPT 3
+continuemos con el siguente commit, Pero antes, la tematica ahora se cambio a la de una tienda de ropa por las imagenes que fueron cargadas de la api, si alguna de estas no encaja remplazala por la de la tematica actual, volviendo al tercer commit, ahora el sistema requiere el siguente requerimiento funcional:
+
+- El sistema debe filtrar los elementos mediante una barra de busqueda.
+
+RESPUESTA 3:
+Cambios realizados
+Temática actualizada:
+
+Cambio a "Tienda de Ropa"
+Filtrado de API para mostrar solo productos de ropa (men's clothing + women's clothing)
+Mejoras en búsqueda:
+
+Búsqueda multi-campo: título, categoría y descripción
+Indicador visual de términos de búsqueda activos
+Contador de resultados encontrados
+Mensaje personalizado cuando no hay resultados
+Input enfocado automáticamente
+UI/UX mejorada:
+
+Label descriptivo en SearchBar
+Estados visuales más claros para búsquedas vacías
+Placeholder con sugerencias de búsqueda
+Estilos CSS nuevos para resultado de búsqueda
+La app ahora filtra correctamente productos de ropa y muestra feedback visual en tiempo real mientras escribes en el buscador. ¿Listo para el siguiente commit?
+
+LA SUGERENCIA FUE MAS O MENOS UTIL: ya que habian errores de pormedio que no permitian que la pagina corriera con exito
+QUE SE CAMBIO?: Se cambio la tematica y se solucionaron errores al momento de ingresar al localhost 
+Ademas se cambio el texto otorgado por la IA en el sitio web.
