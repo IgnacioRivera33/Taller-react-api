@@ -167,3 +167,47 @@ Recarga la app en http://localhost:5173. Ahora puedes bloquear productos y verá
 
 ESTA RESPUESTA FUE UTIL PORQUE: Los cambios se realizaron con exito y funcionan de manera correcta y esperada.
 ACTUALIZACION: Se hicieron cambios y arreglos en el sistema de busqueda y filtrado.
+
+PROMPT 6
+Siguente commit, se necesitan los siguentes requerimientos funcionales:
+
+Debe mostrar una estadistica con la cantidad de elementos totales, de favoritos y de
+bloqueados.
+• Debe manejar estados de carga y de error: mostrar un indicador mientras se consulta la
+API y un mensaje claro si la peticion falla.
+• Tanto favoritos como bloqueados deben guardarse en localStorage para no perderlos al
+refrescar la pagina
+
+RESPUESTA 6
+Cambios realizados
+Nuevo componente:
+
+Statistics.jsx - Panel con estadísticas en tiempo real mostrando:
+Cantidad de productos totales
+Cantidad de favoritos
+Cantidad de bloqueados
+Actualización de App.jsx:
+
+Importación de Statistics
+Integración de Statistics en sidebars con datos actualizados en tiempo real
+Indicador de carga mejorado con spinner animado
+Indicador de error mejorado con opción de reintentar
+Estilos CSS mejorados:
+
+Spinner animado para estado de carga
+Contenedor de error con icono, título y botón de reintentar
+Tarjetas de estadísticas con gradientes y colores diferenciados
+Media queries para adaptación en tablets (3 columnas) y móviles (1 columna)
+localStorage - Ya implementado y verificado:
+
+Favoritos se guardan en localStorage con clave tienda-ropa-favorites
+Bloqueados se guardan en localStorage con clave tienda-ropa-blocked
+Los datos persisten entre recargas de página
+Se cargan automáticamente al iniciar la app
+Características completadas:
+✅ Estadísticas en tiempo real (totales, favoritos, bloqueados)
+✅ Indicador visual de carga con spinner
+✅ Manejo de errores con opción de reintentar
+✅ Persistencia en localStorage (favoritos y bloqueados)
+✅ Estadísticas se actualizan dinámicamente al marcar/desmarcar favoritos
+✅ Estadísticas se actualizan dinámicamente al bloquear/desbloquear

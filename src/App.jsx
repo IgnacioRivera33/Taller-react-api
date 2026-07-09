@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar.jsx';
 import ProductList from './components/ProductList.jsx';
 import FavoritesList from './components/FavoritesList.jsx';
 import BlockedList from './components/BlockedList.jsx';
+import Statistics from './components/Statistics.jsx';
 import { processProducts } from './utils/productProcessor.js';
 
 const API_URL = 'https://fakestoreapi.com/products';
@@ -86,8 +87,25 @@ function App() {
       <SearchBar query={query} onQueryChange={setQuery} />
       <div className="main-layout">
         <main className="main-content">
-          {loading && <p>Cargando productos...</p>}
-          {error && <p className="error-message">{error}</p>}
+          {loading && (
+            <div className="loading-container">
+              <div className="spinner"></div>
+              <p>Cargando productos de nuestra tienda...</p>
+            </div>
+          )}
+          {error && (
+            <div className="error-container">
+              <p className="error-icon">!</p>
+              <p className="error-title">Error al cargar productos</p>
+              <p className="error-message">{error}</p>
+              <button 
+                onClick={() => window.location.reload()}
+                className="retry-button"
+              >
+                Intentar de nuevo
+              </button>
+            </div>
+          )}
           {!loading && !error && (
             <ProductList
               products={products}
@@ -100,6 +118,11 @@ function App() {
           )}
         </main>
         <aside className="sidebars">
+          <Statistics
+            totalProducts={products.length}
+            favoritesCount={favorites.length}
+            blockedCount={blocked.length}
+          />
           <FavoritesList
             products={products}
             favorites={favorites}
