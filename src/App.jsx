@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar.jsx';
 import ProductList from './components/ProductList.jsx';
+import FavoritesList from './components/FavoritesList.jsx';
 
 const API_URL = 'https://fakestoreapi.com/products';
 const FAVORITES_KEY = 'tienda-ropa-favorites';
@@ -75,18 +76,27 @@ function App() {
         <p>Explora nuestra colección de ropa para hombre y mujer.</p>
       </header>
       <SearchBar query={query} onQueryChange={setQuery} />
-      {loading && <p>Cargando productos...</p>}
-      {error && <p className="error-message">{error}</p>}
-      {!loading && !error && (
-        <ProductList
+      <div className="main-layout">
+        <main className="main-content">
+          {loading && <p>Cargando productos...</p>}
+          {error && <p className="error-message">{error}</p>}
+          {!loading && !error && (
+            <ProductList
+              products={products}
+              query={query}
+              favorites={favorites}
+              blocked={blocked}
+              onToggleFavorite={handleToggleFavorite}
+              onToggleBlocked={handleToggleBlocked}
+            />
+          )}
+        </main>
+        <FavoritesList
           products={products}
-          query={query}
           favorites={favorites}
-          blocked={blocked}
-          onToggleFavorite={handleToggleFavorite}
-          onToggleBlocked={handleToggleBlocked}
+          onRemoveFavorite={handleToggleFavorite}
         />
-      )}
+      </div>
     </div>
   );
 }

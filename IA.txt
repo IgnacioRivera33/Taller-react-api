@@ -102,3 +102,31 @@ La app ahora filtra correctamente productos de ropa y muestra feedback visual en
 LA SUGERENCIA FUE MAS O MENOS UTIL: ya que habian errores de pormedio que no permitian que la pagina corriera con exito
 QUE SE CAMBIO?: Se cambio la tematica y se solucionaron errores al momento de ingresar al localhost 
 Ademas se cambio el texto otorgado por la IA en el sitio web.
+
+PROMPT 4
+siguente commit, se requieren los siguentes requerimientos funcionales
+
+Debe marcar elementos como favoritos, que se despliegan en un listado a la derecha de
+la pagina.
+RESPUESTA 4:
+Cambios realizados
+Nuevo componente:
+
+FavoritesList.jsx - Panel derecho con lista de productos favoritos
+Cambios en App.jsx:
+
+Layout adaptado a dos columnas (contenido principal + barra lateral de favoritos)
+Integración de FavoritesList
+Estilos mejorados:
+
+Grid de dos columnas: contenido principal + panel sticky de favoritos
+Tarjetas de favoritos con miniatura, título, precio y botón para quitar
+Panel responsive que se adapta a pantallas menores
+Animaciones suaves en tarjetas
+Funcionalidades
+Los productos marcados como favoritos aparecen en la barra derecha
+Botón "Quitar" para eliminar del listado de favoritos
+Panel sticky que se mantiene visible al scrollear
+Muestra contador y mensaje cuando no hay favoritos
+
+LA RESPUESTA FUE UTIL PORQUE: Se logro el funcionamiento de las dos columnas y se creo el panel sticky de favoritos que se mantiene visible al scrollear.
