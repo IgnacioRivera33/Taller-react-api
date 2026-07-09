@@ -1,0 +1,74 @@
+PRIMER PROMPT
+Para este taller se desea implementar un sistema web que permite seleccionar elementos de un listado ya cargado desde internet mediante una API. El listado debe poder buscarse, marcarse como favorito y adicionalmente bloquearse, para asi mantener la informacion entre recargas de la pagina.
+
+Esta aplicación se debe desarrollar con React JS usando componentes funcionales y hooks.
+
+Adicionalmente se entregaran ordenes especificas para cada commit que se realizará, asi que comencemos creando el sistema paso por paso a mi señal.
+
+paso 1. commit init: estructura inicial del proyecto, componentes base y Vite. Crear archivos si estos no estan presentes.
+
+RESPUESTA 1
+✅ Estructura inicial creada para el proyecto React con Vite
+Archivos agregados:
+
+package.json
+vite.config.js
+index.html
+.gitignore
+main.jsx
+App.jsx
+styles.css
+SearchBar.jsx
+ItemList.jsx
+Lista base de componentes:
+
+App como contenedor principal
+SearchBar para búsqueda
+ItemList para mostrar elementos filtrados
+Ya puedes ejecutar npm install y npm run dev cuando quieras avanzar al siguiente paso.
+
+LA SUGERENCIA FUE UTIL PORQUE: La IA me pudo facilitar el trabajo creandome archivos y organizandolos para ordenarme de mejor manera.
+QUE SE CAMBIO?: SE AJUSTO EL TITULO A "Supermercado" como placeholder para la tematica, y se agrego el archivo IA.txt para guardar las respuestas y prompts generados.
+
+SEGUNDO PROMPT
+Sigamos con el siguente commit, pero primero recordemos que estamos siguiendo ahora una tematica de "Supermercado" en la que se necesitan los siguentes requerimientos funcionales:
+
+El sistema debe presentar un listado de productos o servicios principales, y permitir tres acciones principales (funciones): buscar, marcar favoritos y bloquear, ya que este es un supermercado prioriza que sea una app web sobre productos a la venta de dicho supermercado, (manten el nombre de "Supermercado" como placeholder por ahora)
+
+IMPORTANTE: Todos los productos y/o servicios se tienen que obtener de una API publica a eleccion. Si bien la tematica es libre los elementos deben incluir imagenes.
+
+RESPUESTA 2
+Optimized tool selection
+
+Verificando el estado actual de la aplicación y los archivos principales.
+
+Actualizando la aplicación para usar productos reales con imágenes, búsqueda, favoritos y bloqueo persistente.
+
+Ajustando los estilos para la nueva interfaz de supermercado y verificando la app.
+
+Hecho: la interfaz ahora está adaptada a una app de supermercado con productos reales provenientes de una API pública.
+
+Cambios principales
+App.jsx
+
+Carga productos desde https://fakestoreapi.com/products
+Añade búsqueda por nombre/categoría
+Maneja favoritos y bloqueos con localStorage
+Muestra estado de carga y errores
+Nuevos componentes
+
+ProductList.jsx
+ProductCard.jsx
+Estilos
+
+styles.css actualizado para tarjetas de producto con imagen, badges y botones
+Nota
+ItemList.jsx ahora no se usa y devuelve null. Puedes eliminarlo más adelante si quieres mantener solo los componentes relevantes.
+
+Avancemos al siguiente paso cuando quieras: mejoras funcionales, UI o soporte de servicios/productos.
+
+LA SUGERENCIA FUE UTIL PORQUE: se logro cargar productos desde una api llamada https://fakestoreai.com/products lo que agrega los componentes ProductList y ProductCard
+Tambien se actualizaron style.css y se inutiliza ItemList.jsx
+QUE SE CAMBIO?: Se realizará una nueva prompt para reparar errores y tambien se eliminara el archivo ItemList
+ACTUALIZACION: Se instalo node.js que no se habia instalado previamente, se repararan errores.
+ACTUALIZACION 2: VITE FUNCIONA
