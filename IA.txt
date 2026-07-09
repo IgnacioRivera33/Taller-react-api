@@ -211,3 +211,41 @@ Características completadas:
 ✅ Persistencia en localStorage (favoritos y bloqueados)
 ✅ Estadísticas se actualizan dinámicamente al marcar/desmarcar favoritos
 ✅ Estadísticas se actualizan dinámicamente al bloquear/desbloquear
+
+PROMPT 7
+finalmente el ultimo commit, antes de continuar porfavor solicito que cambies el nombre titulo de la seccion de estadisticas en la que aparece el conteo de elementos bloqueados o desbloqueados, cambiale el nombre de "Estadisticas" a "Marcados como favorito/bloqueado" Ahora continuamos con el ultimo commit: se solicitan estos requerimientos funcionales finales:
+
+El sistema debe ser responsivo, adaptandose correctamente a movil, tablet y escritorio.
+• Debe incluir los nombres de los integrantes en la misma pagina.
+• Debe separarse en componentes de forma adecuada y mantener un codigo ordenado.
+• Se valora crear al menos un hook propio reutilizable (por ejemplo useLocalStorage o
+useFetch)
+
+RESPUESTA 7
+
+Cumplimiento de Requerimientos Finales
+✅ Sistema Responsivo
+
+Adaptación móvil, tablet y escritorio
+Media queries en breakpoints estratégicos
+Componentes flexibles
+✅ Nombres de Integrantes
+
+Footer con nombres (editable en Credits.jsx)
+Visible en la parte inferior de cada página
+✅ Componentes Bien Separados
+
+Cada componente tiene una responsabilidad única
+Comunicación mediante props
+Reutilización de lógica común
+✅ Hooks Propios Reutilizables
+
+useLocalStorage: 30 líneas, totalmente reutilizable
+useFetch: 40 líneas, completamente desacoplado
+Documentados en README
+Tecnologías Utilizadas
+React 18.3.1 con Hooks
+Vite 5.4.1
+CSS3 responsivo
+localStorage API
+Fetch API

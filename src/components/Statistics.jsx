@@ -2,7 +2,7 @@ function Statistics({ totalProducts, favoritesCount, blockedCount }) {
   return (
     <div className="statistics-container">
       <div className="stats-header">
-        <h2>Estadisticas</h2>
+        <h2>Marcados como favorito/bloqueado</h2>
       </div>
       <div className="stats-grid">
         <div className="stat-card total">
